@@ -1,0 +1,45 @@
+
+
+set nohls
+set mouse=""
+set hidden
+set noswapfile
+set wrap
+set textwidth=79
+
+nnoremap ; :
+
+set autoindent  " autoindent always on
+set tabstop=4   " number of visual spaces per tab
+set softtabstop=4   " backspace like a tab instead of spaces
+set expandtab   " tabs are spaces
+set smarttab    " intert tabs at start of line according to shiftwidth, not tabstop
+set shiftwidth=4    " number of spaces for autoindenting
+set scrolloff=3 " keep n lines off the edge of screen when scrolling
+set number      " show line numbers
+set backspace=indent,eol,start  " backspace over everything in insert mode
+
+" switch to paste mode so pasting large amounts of text don't indent weird
+set pastetoggle=<F2>
+
+set showmatch   " highlight matching [{()}]
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
+
+set incsearch   " search as characters are entered
+set hlsearch    " highlight matches
+nmap <silent> ,/ :nohlsearch<CR>
+    " clears highlights after searching by pressing ,/
+set ignorecase  " ignore case when searching
+set smartcase   " detects if you do want to use caps
+
+set formatoptions=qrnlc
+    " q - allow formatting of comments with "gq"
+    " r - auto insert comment leader after <Enter> in insert mode
+    " n - recognize numbered lists
+    " l - long lines are not broken in insert mode
+    " c - auto wrap comments using textwidth and comment leader
+    
+    
+set noerrorbells    "don't beep
+
