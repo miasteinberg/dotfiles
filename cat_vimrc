@@ -43,3 +43,35 @@ set formatoptions=qrnlc
     
 set noerrorbells    "don't beep
 
+" Set format of .nf files as groovy for syntax colors
+au BufNewFile,BufRead,BufReadPost *.nf set syntax=groovy
+au BufNewFile,BufRead,BufReadPost *nextflow.config set syntax=groovy
+
+
+" ----------------vim plug ---------------------
+" install vim-plug (https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation)
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'LukeGoodsell/nextflow-vim'
+
+call plug#end()
+
+set background=dark
+colorscheme palenight
+
+let g:lightline = { 'colorscheme': 'palenight' }
