@@ -7,3 +7,5 @@ alias lk='ls -lSr'              # Sort by size, biggest last.
 alias l='ls -ltr'               # Sort by date, most recent last.
 alias la='ls -ltra'             # Sort by date including hidden.
 
+# for the love of god fix the all writeable color choices
+LS_COLORS+=':ow=01;33'
