@@ -1,4 +1,10 @@
+" Copied from my dotfiles repo
 
+syntax enable
+
+"filetype plugin indent on " auto indent for python. helps with debugging missing parentheses (added by ryan)
+set list " show nonprinting characters (added by ryan)
+set listchars=tab:>.,trail:.,nbsp:.  " how to display nonprinting characters (added by ryan)
 
 set nohls
 set mouse=""
